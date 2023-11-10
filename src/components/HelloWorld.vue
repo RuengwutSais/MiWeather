@@ -21,7 +21,7 @@ export default {
   methods: {
     async getCoordinatesFromCity() {
       const cityName = this.cityName;
-      const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=5b95e06eb295b0c21120e913e524eefb`
+      const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=5b95e06eb295b0c21120e913e524eefb`
       try {
         const geocodingRes = await fetch(geocodingUrl)
         const geoData = await geocodingRes.json()
