@@ -134,7 +134,7 @@ export default {
       <div class="search-bar">
         <input type="text" v-model="cityName" @keydown.enter="getCoordinatesFromCity" placeholder="Enter City..." />
         <button type="submit" @click="getCoordinatesFromCity">
-          <font-awesome-icon icon="magnifying-glass" style="color: #fff" beat />
+          <font-awesome-icon icon="magnifying-glass" style="color: #282c34" beat />
         </button>
       </div>
     </div>
@@ -150,43 +150,43 @@ export default {
                     <div v-if="main.includes('cloud') || description.includes('cloud')">
                       <font-awesome-icon
                         icon="cloud"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #86817c; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <div v-else-if="main.includes('rain') || description.includes('rain')">
                       <font-awesome-icon
                         icon="cloud-showers-water"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #4ab1d8; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <div v-else-if="main.includes('thunderstorm') || description.includes('thunderstorm')">
                       <font-awesome-icon
                         icon="cloud-bolt"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #fcaf38; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <div v-else-if="main.includes('drizzle') || description.includes('drizzle')">
                       <font-awesome-icon
                         icon="cloud-showers-heavy"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #86817c; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <div v-else-if="main.includes('snow') || description.includes('snow')">
                       <font-awesome-icon
                         icon="snowflake"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #3fb3ee; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <div v-else-if="main.includes('clear') || description.includes('clear')">
                       <font-awesome-icon
                         icon="cloud-sun"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #f97b4f; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <div v-else>
                       <font-awesome-icon
                         icon="smog"
-                        style="color: #ffffff; height: 8rem; width: 8rem; margin-bottom: 20px"
+                        style="color: #54504c; height: 14rem; width: 14rem; margin-bottom: 20px"
                       />
                     </div>
                     <h2>{{ temp }} °C</h2>
@@ -202,9 +202,9 @@ export default {
                       <font-awesome-icon
                         icon="location-dot"
                         style="
-                          color: #ffffff;
-                          height: 1.2rem;
-                          width: 1.2rem;
+                          color: #282c34;
+                          height: 1.8rem;
+                          width: 1.8rem;
                           margin-bottom: 5px;
                           margin-right: 5px;
                         "
@@ -215,9 +215,9 @@ export default {
                       <font-awesome-icon
                         icon="clock"
                         style="
-                          color: #ffffff;
-                          height: 1rem;
-                          width: 1rem;
+                          color: #282c34;
+                          height: 1.4rem;
+                          width: 1.4rem;
                           margin-bottom: 8px;
                           margin-right: 5px;
                         "
@@ -234,7 +234,7 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="bars-staggered" style="color: #fff; height: 4rem; width: 4rem; margin-right: 20px;"/>
+                  <font-awesome-icon icon="bars-staggered" style="color: #86817c; height: 5rem; width: 5rem; margin-right: 20px;" fade/>
                   <div>
                     <h5>Visibility</h5>
                     <p>{{ visibility }} km</p>
@@ -245,7 +245,7 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="weight-scale" style="color: #fff; height: 4rem; width: 4rem; margin-right: 20px;"/>
+                  <font-awesome-icon icon="weight-scale" style="color: #c14364; height: 5rem; width: 5rem; margin-right: 20px;" shake/>
                   <div>
                     <h5>Pressure</h5>
                     <p>{{ pressure }} hPa</p>
@@ -256,7 +256,7 @@ export default {
             <div class="row">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="sun" style="color: #fff; height: 4rem; width: 4rem; margin-right: 20px;"/>
+                  <font-awesome-icon icon="sun" style="color: #ee6a59; height: 5rem; width: 5rem; margin-right: 20px;" spin/>
                   <div>
                     <h5>Sunrise</h5>
                     <p>{{ sunrise }}</p>
@@ -270,7 +270,7 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="droplet" style="color: #fff; height: 4rem; width: 4rem; margin-right: 20px;"/>
+                  <font-awesome-icon icon="droplet" style="color: #4ab1d8; height: 5rem; width: 5rem; margin-right: 20px;" bounce/>
                   <div>
                     <h5>Humidity</h5>
                     <p>{{ humidity }} %</p>
@@ -281,7 +281,7 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="wind" style="color: #fff; height: 4rem; width: 4rem; margin-right: 20px;"/>
+                    <font-awesome-icon icon="wind" style="color: #50a3a4; height: 5rem; width: 5rem; margin-right: 20px;" beat/>
                   <div>
                     <h5>Wind Speed</h5>
                     <p>{{ windspeed }} km/h</p>
@@ -292,7 +292,7 @@ export default {
             <div class="row">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="moon" style="color: #fff; height: 4rem; width: 4rem; margin-right: 20px;"/>
+                  <font-awesome-icon icon="moon" style="color: #f9ac67; height: 5rem; width: 5rem; margin-right: 20px;" flip/>
                   <div>
                     <h5>Sunset</h5>
                     <p>{{ sunset }}</p>
