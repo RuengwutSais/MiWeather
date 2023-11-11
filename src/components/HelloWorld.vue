@@ -1,5 +1,4 @@
 <script>
-
 export default {
   data() {
     return {
@@ -15,12 +14,12 @@ export default {
       windspeed: '',
       sunset: '',
       sunrise: '',
-      name: '',
+      name: ''
     }
   },
   methods: {
     async getCoordinatesFromCity() {
-      const cityName = this.cityName;
+      const cityName = this.cityName
       const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=5b95e06eb295b0c21120e913e524eefb`
       try {
         const geocodingRes = await fetch(geocodingUrl)
@@ -46,7 +45,7 @@ export default {
           const temp = weatherData.main.feels_like - 273.15
           this.temp = temp.toFixed(1)
           const humidity = weatherData.main.humidity
-          this. humidity = humidity
+          this.humidity = humidity
           const pressure = weatherData.main.pressure
           this.pressure = pressure
           const visibility = weatherData.visibility / 1000
@@ -59,16 +58,16 @@ export default {
           const sunriseDate = new Date(weatherData.sys.sunrise * 1000)
           const sunrise = sunriseDate.toLocaleTimeString('en-US', {
             hour: '2-digit',
-            minute: '2-digit',
-          });
+            minute: '2-digit'
+          })
           this.sunrise = sunrise
           console.log(sunrise)
 
           const sunsetDate = new Date(weatherData.sys.sunset * 1000)
           const sunset = sunsetDate.toLocaleTimeString('en-US', {
             hour: '2-digit',
-            minute: '2-digit',
-          });
+            minute: '2-digit'
+          })
           this.sunset = sunset
           console.log(sunset)
 
@@ -103,11 +102,11 @@ export default {
         console.error(error)
         throw error
       }
-      this.cityName = '';
+      this.cityName = ''
     },
     sendValue() {
       // Use this.searchValue to access the input value in your methods
-      console.log('Input Value:', this.searchValue);
+      console.log('Input Value:', this.searchValue)
       // You can also perform other actions with this.searchValue here
     },
     displayWeather() {
@@ -115,7 +114,7 @@ export default {
     }
   },
   mounted() {
-    this.displayWeather() // Call the function on component load
+    this.displayWeather();
   }
 }
 </script>
@@ -132,7 +131,12 @@ export default {
         </div>
       </div>
       <div class="search-bar">
-        <input type="text" v-model="cityName" @keydown.enter="getCoordinatesFromCity" placeholder="Enter City..." />
+        <input
+          type="text"
+          v-model="cityName"
+          @keydown.enter="getCoordinatesFromCity"
+          placeholder="Enter City..."
+        />
         <button type="submit" @click="getCoordinatesFromCity">
           <font-awesome-icon icon="magnifying-glass" style="color: #282c34" beat />
         </button>
@@ -148,46 +152,29 @@ export default {
                 <div>
                   <div v-if="weatherData.length > 0">
                     <div v-if="main.includes('cloud') || description.includes('cloud')">
-                      <font-awesome-icon
-                        icon="cloud"
-                        style="color: #86817c; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                      <img src="../assets/logo/cloudy.png" alt="cloudy" />
                     </div>
                     <div v-else-if="main.includes('rain') || description.includes('rain')">
-                      <font-awesome-icon
-                        icon="cloud-showers-water"
-                        style="color: #4ab1d8; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                      <img src="../assets/logo/rain.png" alt="rain" />
                     </div>
-                    <div v-else-if="main.includes('thunderstorm') || description.includes('thunderstorm')">
-                      <font-awesome-icon
-                        icon="cloud-bolt"
-                        style="color: #fcaf38; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                    <div
+                      v-else-if="
+                        main.includes('thunderstorm') || description.includes('thunderstorm')
+                      "
+                    >
+                      <img src="../assets/logo/thunderstorm.png" alt="thunderstorm" />
                     </div>
                     <div v-else-if="main.includes('drizzle') || description.includes('drizzle')">
-                      <font-awesome-icon
-                        icon="cloud-showers-heavy"
-                        style="color: #86817c; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                      <img src="../assets/logo/weather.png" alt="drizzle" />
                     </div>
                     <div v-else-if="main.includes('snow') || description.includes('snow')">
-                      <font-awesome-icon
-                        icon="snowflake"
-                        style="color: #3fb3ee; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                      <img src="../assets/logo/snowing.png" alt="snow" />
                     </div>
                     <div v-else-if="main.includes('clear') || description.includes('clear')">
-                      <font-awesome-icon
-                        icon="cloud-sun"
-                        style="color: #f97b4f; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                      <img src="../assets/logo/sun.png" alt="clear" />
                     </div>
                     <div v-else>
-                      <font-awesome-icon
-                        icon="smog"
-                        style="color: #54504c; height: 14rem; width: 14rem; margin-bottom: 20px"
-                      />
+                      <img src="../assets/logo/smog.png" alt="smog" />
                     </div>
                     <h2>{{ temp }} °C</h2>
                     <div>
@@ -198,7 +185,7 @@ export default {
                         ( {{ weatherData[0].weather[0].description }} )
                       </p>
                     </div>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center">
                       <font-awesome-icon
                         icon="location-dot"
                         style="
@@ -211,7 +198,7 @@ export default {
                       />
                       <h2>{{ name }}</h2>
                     </div>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center">
                       <font-awesome-icon
                         icon="clock"
                         style="
@@ -234,7 +221,11 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="bars-staggered" style="color: #86817c; height: 5rem; width: 5rem; margin-right: 20px;" fade/>
+                  <font-awesome-icon
+                    icon="bars-staggered"
+                    style="color: #454545; height: 5rem; width: 5rem; margin-right: 20px"
+                    fade
+                  />
                   <div>
                     <h5>Visibility</h5>
                     <p>{{ visibility }} km</p>
@@ -245,7 +236,11 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="weight-scale" style="color: #c14364; height: 5rem; width: 5rem; margin-right: 20px;" shake/>
+                  <font-awesome-icon
+                    icon="weight-scale"
+                    style="color: #d83f31; height: 5rem; width: 5rem; margin-right: 20px"
+                    shake
+                  />
                   <div>
                     <h5>Pressure</h5>
                     <p>{{ pressure }} hPa</p>
@@ -256,7 +251,11 @@ export default {
             <div class="row">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="sun" style="color: #ee6a59; height: 5rem; width: 5rem; margin-right: 20px;" spin/>
+                  <font-awesome-icon
+                    icon="sun"
+                    style="color: #ee9322; height: 5rem; width: 5rem; margin-right: 20px"
+                    spin
+                  />
                   <div>
                     <h5>Sunrise</h5>
                     <p>{{ sunrise }}</p>
@@ -270,7 +269,11 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="droplet" style="color: #4ab1d8; height: 5rem; width: 5rem; margin-right: 20px;" bounce/>
+                  <font-awesome-icon
+                    icon="droplet"
+                    style="color: #3876bf; height: 5rem; width: 5rem; margin-right: 20px"
+                    bounce
+                  />
                   <div>
                     <h5>Humidity</h5>
                     <p>{{ humidity }} %</p>
@@ -281,7 +284,11 @@ export default {
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
-                    <font-awesome-icon icon="wind" style="color: #50a3a4; height: 5rem; width: 5rem; margin-right: 20px;" beat/>
+                  <font-awesome-icon
+                    icon="wind"
+                    style="color: #219c90; height: 5rem; width: 5rem; margin-right: 20px"
+                    beat
+                  />
                   <div>
                     <h5>Wind Speed</h5>
                     <p>{{ windspeed }} km/h</p>
@@ -292,7 +299,11 @@ export default {
             <div class="row">
               <div class="col">
                 <div class="d-flex">
-                  <font-awesome-icon icon="moon" style="color: #f9ac67; height: 5rem; width: 5rem; margin-right: 20px;" flip/>
+                  <font-awesome-icon
+                    icon="moon"
+                    style="color: #e9b824; height: 5rem; width: 5rem; margin-right: 20px"
+                    flip
+                  />
                   <div>
                     <h5>Sunset</h5>
                     <p>{{ sunset }}</p>

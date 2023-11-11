@@ -9,7 +9,6 @@
     // overflow: hidden;
     position: relative;
     width: 100%;
-    height: 100vh;
     font-family: "Montserrat", sans-serif;
 
     .navb-weather {
@@ -26,12 +25,15 @@
             align-items: center;
             text-align: center;
             .logo-icon {
-                height: 30px;
-                width: 30px;
-                padding-right: 5px;
+                height: 2rem;
+                width: 2rem;
+
             }
             .logo-name {
                 color: #fff;
+                h1{
+                    font-weight: bold !important;
+                }
             }
         }
 
@@ -45,7 +47,7 @@
             background-color: #fff;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
             ::placeholder {
-                color: #282c34;
+                color: #272829;
             }
         }
 
@@ -56,7 +58,7 @@
             outline: none;
             padding-left: 20px;
             font-size: 16px;
-            color: #282c34;
+            color: #272829;
             text-transform: uppercase;
         }
 
@@ -77,8 +79,13 @@
         font-weight: bold !important;
         .container {
             .row {
-                color: #282c34;
+                color: #272829;
                 height: 100%;
+                img{
+                    height: 20rem;
+                    width: 20rem;
+                    margin-bottom: 20px;
+                }
                 .col {
                     .row {
                         .col {
@@ -93,6 +100,50 @@
                             gap: 2.5rem;
                             p{
                                 font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .weather-wrapper {
+        .navb-weather {
+            flex-direction: column;
+
+            .search-bar {
+                margin-top: 20px;
+            }
+        }
+
+        .weather-detail {
+            height: auto;
+        }
+
+        .weather-detail {
+            height: 40vh;
+            margin: 20px;
+            .container {
+                .row {
+                    color: #272829;
+                    height: 100%;
+                    img{
+                        height: 10rem;
+                        width: 10rem;
+                        margin-bottom: 20px;
+                    }
+                    .col {
+                        margin: 0;
+                        margin-top: 20px;
+                        .row {
+                            .col {
+                                width: 100%;
+                                p{
+                                    font-size: 16px;
+                                }
                             }
                         }
                     }
