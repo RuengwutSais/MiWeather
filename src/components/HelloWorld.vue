@@ -14,7 +14,7 @@ export default {
       windspeed: '',
       sunset: '',
       sunrise: '',
-      name: ''
+      name: '',
     }
   },
   methods: {
@@ -92,29 +92,28 @@ export default {
           const description = weatherData.weather[0].description.toLowerCase()
           this.main = main
           this.description = description
-
           console.log(main, description)
+
         } catch (error) {
           console.error(error)
           throw error
         }
       } catch (error) {
-        console.error(error)
+        console.error('Invalid City Name:', error)
         throw error
+      } finally {
+        this.cityName = ''
       }
-      this.cityName = ''
     },
     sendValue() {
-      // Use this.searchValue to access the input value in your methods
       console.log('Input Value:', this.searchValue)
-      // You can also perform other actions with this.searchValue here
     },
     displayWeather() {
       this.getCoordinatesFromCity(this.cityName)
-    }
+    },
   },
   mounted() {
-    this.displayWeather();
+    this.displayWeather()
   }
 }
 </script>
@@ -216,14 +215,14 @@ export default {
               </div>
             </div>
           </div>
-          <div class="col" style="display: grid; margin-left: 20px; margin-right: 20px">
+          <div class="col" style="display: grid;">
             <!-- Second Column with 3 rows -->
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
                   <font-awesome-icon
                     icon="bars-staggered"
-                    style="color: #454545; height: 5rem; width: 5rem; margin-right: 20px"
+                    style="color: #454545;"
                     fade
                   />
                   <div>
@@ -238,7 +237,7 @@ export default {
                 <div class="d-flex">
                   <font-awesome-icon
                     icon="weight-scale"
-                    style="color: #d83f31; height: 5rem; width: 5rem; margin-right: 20px"
+                    style="color: #d83f31;"
                     shake
                   />
                   <div>
@@ -253,7 +252,7 @@ export default {
                 <div class="d-flex">
                   <font-awesome-icon
                     icon="sun"
-                    style="color: #ee9322; height: 5rem; width: 5rem; margin-right: 20px"
+                    style="color: #ee9322;"
                     spin
                   />
                   <div>
@@ -271,7 +270,7 @@ export default {
                 <div class="d-flex">
                   <font-awesome-icon
                     icon="droplet"
-                    style="color: #3876bf; height: 5rem; width: 5rem; margin-right: 20px"
+                    style="color: #3876bf;"
                     bounce
                   />
                   <div>
@@ -286,7 +285,7 @@ export default {
                 <div class="d-flex">
                   <font-awesome-icon
                     icon="wind"
-                    style="color: #219c90; height: 5rem; width: 5rem; margin-right: 20px"
+                    style="color: #219c90;"
                     beat
                   />
                   <div>
@@ -301,7 +300,7 @@ export default {
                 <div class="d-flex">
                   <font-awesome-icon
                     icon="moon"
-                    style="color: #e9b824; height: 5rem; width: 5rem; margin-right: 20px"
+                    style="color: #e9b824;"
                     flip
                   />
                   <div>
