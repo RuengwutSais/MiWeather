@@ -236,6 +236,22 @@ export default {
               <div class="col">
                 <div class="d-flex">
                   <font-awesome-icon
+                    icon="droplet"
+                    style="color: #3876bf;"
+                    bounce
+                  />
+                  <div>
+                    <h5>Humidity</h5>
+                    <p>{{ humidity }} %</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="d-flex">
+                  <font-awesome-icon
                     icon="weight-scale"
                     style="color: #d83f31;"
                     shake
@@ -247,39 +263,9 @@ export default {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col">
-                <div class="d-flex">
-                  <font-awesome-icon
-                    icon="sun"
-                    style="color: #ee9322;"
-                    spin
-                  />
-                  <div>
-                    <h5>Sunrise</h5>
-                    <p>{{ sunrise }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="col" style="display: grid">
             <!-- Third Column with 3 rows -->
-            <div class="row" style="padding-bottom: 20px">
-              <div class="col">
-                <div class="d-flex">
-                  <font-awesome-icon
-                    icon="droplet"
-                    style="color: #3876bf;"
-                    bounce
-                  />
-                  <div>
-                    <h5>Humidity</h5>
-                    <p>{{ humidity }} %</p>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="row" style="padding-bottom: 20px">
               <div class="col">
                 <div class="d-flex">
@@ -291,6 +277,21 @@ export default {
                   <div>
                     <h5>Wind Speed</h5>
                     <p>{{ windspeed }} km/h</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-bottom: 20px">
+              <div class="col">
+                <div class="d-flex">
+                  <font-awesome-icon
+                    icon="sun"
+                    style="color: #ee9322;"
+                    spin
+                  />
+                  <div>
+                    <h5>Sunrise</h5>
+                    <p>{{ sunrise }}</p>
                   </div>
                 </div>
               </div>
