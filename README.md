@@ -1,6 +1,6 @@
 # weather-dashboard
 
-An practice workspace of a weather dashboard by calling an API from OpenWeather.com
+A practice workspace of a weather dashboard by calling an API from OpenWeather.com
 
 ## Recommended IDE Setup
 
