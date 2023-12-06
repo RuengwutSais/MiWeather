@@ -1,6 +1,6 @@
 # weather-dashboard
 
-This template should help get you started developing with Vue 3 in Vite.
+An practice workspace of a weather dashboard by calling an API from OpenWeather.com
 
 ## Recommended IDE Setup
 
